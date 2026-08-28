@@ -117,21 +117,32 @@
   <footer>
     © 2026 Veronika Niakshu — QA Engineer
   </footer>
-<!-- Tomato plant -->
-<div id="plant" style="position:fixed; bottom:0; left:50%; transform:translateX(-50%);">
-  <svg width="120" height="200" viewBox="0 0 120 200">
+<!-- Tomato plant in bottom-right corner -->
+<div id="plant" style="position:fixed; bottom:0; right:0; padding:10px;">
+  <svg width="150" height="200" viewBox="0 0 150 200">
     <!-- Stem -->
-    <rect x="58" y="50" width="4" height="150" fill="green"/>
+    <rect x="72" y="50" width="6" height="150" fill="green"/>
+    <!-- Branches -->
+    <line x1="75" y1="100" x2="40" y2="80" stroke="green" stroke-width="4"/>
+    <line x1="75" y1="120" x2="110" y2="90" stroke="green" stroke-width="4"/>
+    <!-- Tomato on left branch -->
+    <circle id="tomato" cx="40" cy="80" r="15" fill="red" stroke="darkred" stroke-width="2" style="cursor:pointer"/>
     <!-- Leaves -->
-    <ellipse cx="40" cy="100" rx="20" ry="10" fill="green"/>
-    <ellipse cx="80" cy="120" rx="20" ry="10" fill="green"/>
-    <!-- Tomato -->
-    <circle id="tomato" cx="60" cy="80" r="15" fill="red" stroke="darkred" stroke-width="2" style="cursor:pointer"/>
+    <ellipse cx="110" cy="90" rx="15" ry="8" fill="green"/>
   </svg>
 </div>
 
 <!-- Bug -->
-<div id="bug" style="position:fixed; bottom:80px; left:50%; width:20px; height:20px; background:limegreen; border-radius:50%; display:none;"></div>
+<div id="bug" style="position:fixed; width:24px; height:24px; background:limegreen; border-radius:50%; display:none;">
+  <!-- Legs -->
+  <div style="position:absolute; top:2px; left:-6px; width:6px; height:2px; background:black;"></div>
+  <div style="position:absolute; top:20px; left:-6px; width:6px; height:2px; background:black;"></div>
+  <div style="position:absolute; top:2px; right:-6px; width:6px; height:2px; background:black;"></div>
+  <div style="position:absolute; top:20px; right:-6px; width:6px; height:2px; background:black;"></div>
+  <!-- Antennae -->
+  <div style="position:absolute; top:-6px; left:4px; width:2px; height:6px; background:black;"></div>
+  <div style="position:absolute; top:-6px; right:4px; width:2px; height:6px; background:black;"></div>
+</div>
 
 <script>
   const tomato = document.getElementById('tomato');
@@ -139,25 +150,39 @@
 
   tomato.addEventListener('click', () => {
     bug.style.display = 'block';
-    bug.style.left = '50%';
-    bug.style.bottom = '80px';
+    bug.style.left = (window.innerWidth - 100) + 'px';
+    bug.style.bottom = '100px';
 
-    // випадковий напрямок: left, right, up, down
     const directions = ['left','right','up','down'];
     const dir = directions[Math.floor(Math.random()*directions.length)];
 
-    let posX = window.innerWidth/2;
-    let posY = 80;
+    let posX = window.innerWidth - 100;
+    let posY = 100;
+    let wave = 0;
+
     const move = setInterval(() => {
-      if (dir === 'right') posX += 5;
-      if (dir === 'left') posX -= 5;
-      if (dir === 'up') posY += 5;
-      if (dir === 'down') posY -= 5;
+      wave += 0.3; // хвиля для коливання
+
+      if (dir === 'right') {
+        posX += 5;
+        posY += Math.sin(wave) * 2; // коливання по вертикалі
+      }
+      if (dir === 'left') {
+        posX -= 5;
+        posY += Math.sin(wave) * 2;
+      }
+      if (dir === 'up') {
+        posY += 5;
+        posX += Math.sin(wave) * 2; // коливання по горизонталі
+      }
+      if (dir === 'down') {
+        posY -= 5;
+        posX += Math.sin(wave) * 2;
+      }
 
       bug.style.left = posX + 'px';
       bug.style.bottom = posY + 'px';
 
-      // коли жук виходить за межі екрану
       if (posX < -50 || posX > window.innerWidth+50 || posY < -50 || posY > window.innerHeight+50) {
         clearInterval(move);
         bug.style.display = 'none';
