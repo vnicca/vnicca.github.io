@@ -5,15 +5,17 @@
   <title>Veronika Niakshu - QA Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; }
-    header { background: #6c63ff; color: white; padding: 20px; text-align: center; }
-    section { padding: 20px; max-width: 800px; margin: auto; }
-    h2 { color: #6c63ff; }
-    .contact { margin-top: 10px; font-size: 0.9em; }
-    .skills, .experience, .education { margin-bottom: 20px; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
+    header { background: #1a1a1a; color: #fff; padding: 40px 20px; text-align: center; }
+    header h1 { margin: 0; font-size: 2.2em; }
+    header p { margin: 5px 0; font-size: 1.1em; color: #bbb; }
+    .contact a { color: #6c63ff; text-decoration: none; margin: 0 10px; }
+    section { padding: 40px 20px; max-width: 900px; margin: auto; }
+    h2 { color: #1a1a1a; border-bottom: 2px solid #6c63ff; padding-bottom: 5px; }
     ul { list-style: none; padding: 0; }
-    li { margin-bottom: 5px; }
-    footer { background: #f4f4f4; text-align: center; padding: 10px; font-size: 0.8em; }
+    li { margin-bottom: 8px; }
+    .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    footer { background: #1a1a1a; color: #bbb; text-align: center; padding: 15px; font-size: 0.9em; }
   </style>
 </head>
 <body>
@@ -21,57 +23,61 @@
     <h1>Veronika Niakshu</h1>
     <p>Middle Manual QA Engineer | 3+ Years Experience</p>
     <div class="contact">
-      📞 +38(096)714-27-94 | ✉️ v.niakshu@gmail.com | LinkedIn: Veronika Niakshu
+      <a href="tel:+380967142794">📞 +38(096)714-27-94</a>
+      <a href="mailto:v.niakshu@gmail.com">✉️ v.niakshu@gmail.com</a>
+      <a href="https://www.linkedin.com/in/veronika-niakshu" target="_blank">🔗 LinkedIn</a>
     </div>
   </header>
 
-  <section class="profile">
-    <h2>Profile</h2>
-    <p>QA Engineer with 3+ years of experience in manual and API testing of web and mobile applications. Skilled in Postman, SQL, Jira, DevTools. Recently tested an LLM-based healthcare system (calls + SMS reminders), gaining practical AI-assisted QA experience. Studied Python for automation, used minimally, eager to grow further.</p>
-  </section>
+  <section>
+    <div class="card">
+      <h2>Profile</h2>
+      <p>QA Engineer with 3+ years of experience in manual and API testing of web and mobile applications. Skilled in Postman, SQL, Jira, DevTools. Recently tested an LLM-based healthcare system (calls + SMS reminders), gaining practical AI-assisted QA experience. Studied Python for automation, used minimally, eager to grow further.</p>
+    </div>
 
-  <section class="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Manual & API Testing (REST)</li>
-      <li>Web & Mobile QA</li>
-      <li>Regression, Integration, Exploratory Testing</li>
-      <li>Postman, SQL, Jira, TestRail</li>
-      <li>Chrome DevTools, Cloud Logging</li>
-      <li>Agile/Scrum, CI/CD (Jenkins)</li>
-    </ul>
-  </section>
+    <div class="card">
+      <h2>Skills</h2>
+      <ul>
+        <li>Manual & API Testing (REST)</li>
+        <li>Web & Mobile QA</li>
+        <li>Regression, Integration, Exploratory Testing</li>
+        <li>Postman, SQL, Jira, TestRail</li>
+        <li>Chrome DevTools, Cloud Logging</li>
+        <li>Agile/Scrum, CI/CD (Jenkins)</li>
+      </ul>
+    </div>
 
-  <section class="experience">
-    <h2>Experience</h2>
-    <h3>Middle Manual QA Engineer | SXOPE Co. (2023–2026)</h3>
-    <ul>
-      <li>Expanded test case database from 700 to 2000+</li>
-      <li>Optimized release cycle from 10 to 5 days</li>
-      <li>Performed REST API & integration testing</li>
-      <li>Investigated issues via Cloud Logging & SQL</li>
-      <li>Tested LLM-based healthcare communication system</li>
-    </ul>
-    <h3>Accountant | TOV Garden Club (2017–2023)</h3>
-    <ul>
-      <li>Processed 250+ financial documents daily</li>
-      <li>Implemented structured spreadsheet systems</li>
-    </ul>
-  </section>
+    <div class="card">
+      <h2>Experience</h2>
+      <h3>SXOPE Co. | Middle QA Engineer (2023–2026)</h3>
+      <ul>
+        <li>Expanded test case database from 700 to 2000+</li>
+        <li>Optimized release cycle from 10 to 5 days</li>
+        <li>Performed REST API & integration testing</li>
+        <li>Investigated issues via Cloud Logging & SQL</li>
+        <li>Tested LLM-based healthcare communication system</li>
+      </ul>
+      <h3>TOV Garden Club | Accountant (2017–2023)</h3>
+      <ul>
+        <li>Processed 250+ financial documents daily</li>
+        <li>Implemented structured spreadsheet systems</li>
+      </ul>
+    </div>
 
-  <section class="education">
-    <h2>Education</h2>
-    <p>Master’s Degree in Accounting & Auditing, NUWMNR (2002–2008)</p>
-    <p>QA Courses: Basics of Software Testing, Postman API Testing, Databases & SQL</p>
-  </section>
+    <div class="card">
+      <h2>Education</h2>
+      <p>Master’s Degree in Accounting & Auditing, NUWMNR (2002–2008)</p>
+      <p>QA Courses: Basics of Software Testing, Postman API Testing, Databases & SQL</p>
+    </div>
 
-  <section class="languages">
-    <h2>Languages</h2>
-    <p>Ukrainian — Native | English — Upper-Intermediate (B2)</p>
+    <div class="card">
+      <h2>Languages</h2>
+      <p>Ukrainian — Native | English — Upper-Intermediate (B2)</p>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 Veronika Niakshu</p>
+    © 2026 Veronika Niakshu — QA Engineer
   </footer>
 </body>
 </html>
