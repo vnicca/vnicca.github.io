@@ -126,19 +126,9 @@
   <footer>
     © 2026 Veronika Niakshu — QA Engineer
   </footer>
-<!-- Tomato plant in bottom-right corner -->
+<!-- Pixel tomato plant in bottom-right corner -->
 <div id="plant" style="position:fixed; bottom:0; right:0; padding:10px;">
-  <svg width="150" height="200" viewBox="0 0 150 200">
-    <!-- Stem -->
-    <rect x="72" y="50" width="6" height="150" fill="green"/>
-    <!-- Branches -->
-    <line x1="75" y1="100" x2="40" y2="80" stroke="green" stroke-width="4"/>
-    <line x1="75" y1="120" x2="110" y2="90" stroke="green" stroke-width="4"/>
-    <!-- Tomato on left branch -->
-    <circle id="tomato" cx="40" cy="80" r="15" fill="red" stroke="darkred" stroke-width="2" style="cursor:pointer"/>
-    <!-- Leaves -->
-    <ellipse cx="110" cy="90" rx="15" ry="8" fill="green"/>
-  </svg>
+  <img id="tomatoPlant" src="plant.png" alt="Tomato Plant" width="120" style="cursor:pointer;">
 </div>
 
 <!-- Bug -->
@@ -154,12 +144,12 @@
 </div>
 
 <script>
-  const tomato = document.getElementById('tomato');
+  const plant = document.getElementById('tomatoPlant');
   const bug = document.getElementById('bug');
 
-  tomato.addEventListener('click', () => {
+  plant.addEventListener('click', () => {
     bug.style.display = 'block';
-    bug.style.left = (window.innerWidth - 100) + 'px';
+    bug.style.right = '100px';
     bug.style.bottom = '100px';
 
     const directions = ['left','right','up','down'];
@@ -174,7 +164,7 @@
 
       if (dir === 'right') {
         posX += 5;
-        posY += Math.sin(wave) * 2; // коливання по вертикалі
+        posY += Math.sin(wave) * 2;
       }
       if (dir === 'left') {
         posX -= 5;
@@ -182,7 +172,7 @@
       }
       if (dir === 'up') {
         posY += 5;
-        posX += Math.sin(wave) * 2; // коливання по горизонталі
+        posX += Math.sin(wave) * 2;
       }
       if (dir === 'down') {
         posY -= 5;
