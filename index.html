@@ -176,24 +176,8 @@
       <article>
         <h3>5. Gherkin / BDD UI scenarios</h3>
         <p class="desc">UI scenarios for a healthcare patient portal, written in Gherkin (Given / When / Then). Coverage: happy-path booking, disabled Confirm without a slot, empty-state CTA, 375px date picker, session timeout, and a Scenario Outline for nurse / doctor / admin / patient (Create note + deep-link to another doctor’s note). I run these manually and map FAIL rows to bug IDs (404 CTA, clipped picker, IDOR on note URL). Sanitized demo (patient_demo only) — same style as production BDD packs, no real PHI.</p>
-        <p class="file" style="margin:0 0 6px;color:#1f4e79;font-family:Consolas,monospace;font-size:12px;">book_visit.ui.feature</p>
-        <pre class="gherkin"><span class="tag">@ui @smoke @appointments</span>
-<span class="kw">Feature:</span> Patient books a clinic visit on web
-
-  <span class="kw">Background:</span>
-    <span class="kw">Given</span> I am logged in as <span class="str">"patient_demo"</span>
-    <span class="kw">And</span> clinic <span class="str">"Clinic A"</span> has an open slot <span class="str">"tomorrow 10:00"</span>
-
-  <span class="kw">Scenario:</span> Book tomorrow 10:00 from the calendar
-    <span class="kw">When</span> I open <span class="str">"Book a visit"</span>
-    <span class="kw">And</span> I select date <span class="str">"tomorrow"</span> and time <span class="str">"10:00"</span>
-    <span class="kw">And</span> I confirm the booking
-    <span class="kw">Then</span> I see confirmation <span class="str">"Visit booked"</span>
-    <span class="kw">And</span> an SMS with id like <span class="str">"sm_test_*"</span> is queued
-
-  <span class="kw">Scenario:</span> Confirm stays disabled until a slot is selected
-    <span class="kw">When</span> I click Confirm without selecting a time
-    <span class="kw">Then</span> the Confirm button stays disabled</pre>
+        <img src="gherkin_bdd_ui.jpg" alt="Sanitized Gherkin BDD UI test cases">
+        <p class="sample-note" style="margin:12px 0 8px;">Manual run results mapped to bug IDs:</p>
         <table>
           <thead>
             <tr><th>Tag</th><th>Scenario</th><th>Result</th><th>Linked evidence</th></tr>
