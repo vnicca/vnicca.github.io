@@ -10,8 +10,10 @@
     header { background: #1a1a1a; color: #fff; padding: 40px 20px; text-align: center; }
     header h1 { margin: 0; font-size: 2.2em; }
     header p { margin: 5px 0; font-size: 1.1em; color: #bbb; }
-    .contact a { color: #6c63ff; text-decoration: none; margin: 0 10px; }
-    section { padding: 40px 20px; max-width: 900px; margin: auto; }
+    .contact a { color: #6c63ff; text-decoration: none; margin: 8px 10px; display: inline-flex; align-items: center; gap: 6px; }
+    .contact a:hover { text-decoration: underline; }
+    .telegram-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+    .telegram-link .arrow { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }    section { padding: 40px 20px; max-width: 900px; margin: auto; }
     h2 { color: #1a1a1a; border-bottom: 2px solid #6c63ff; padding-bottom: 5px; }
     ul { list-style: none; padding: 0; }
     li { margin-bottom: 8px; }
@@ -27,13 +29,18 @@
       <a href="tel:+380967142794">📞 +38(096)714-27-94</a>
       <a href="mailto:v.niakshu@gmail.com">✉️ v.niakshu@gmail.com</a>
       <a href="https://www.linkedin.com/in/veronika-niakshu" target="_blank">🔗 LinkedIn</a>
+      <a href="https://t.me/v_nica" class="telegram-link" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 2.3c.4-.2.8.2.7.6l-3.2 18.1c-.1.5-.6.7-1 .5l-5.4-3.9-2.6 2.5c-.3.3-.8.1-.8-.3v-4.4L20 5.4 6.5 13.8 2.4 12.5c-.6-.2-.6-1 .1-1.3L21.7 2.3z"/></svg>
+        Contact me via Telegram @v_nica
+        <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </header>
 
   <section>
     <div class="card">
       <h2>Profile</h2>
-      <p>QA Engineer with 3+ years of experience in manual and API testing of web applications. Proven track record of expanding test coverage, reducing regression cycle times, and improving release quality. Strong background in test documentation, bug lifecycle management, and Agile/Scrum environments. Hands-on with Postman, Jira, TestRail, SQL, Cloud Spanner, and Google Cloud Logging. Recently tested an LLM-based healthcare system (calls + SMS reminders), gaining practical AI-assisted QA experience. Studied Python for automation, used minimally, eager to grow further.</p>
+      <p>QA Engineer with 3+ years of manual and API testing of web applications. For 3+ years I tested one healthcare product: first doctors, clinics, and working hours; later in the same product an LLM part (calls + SMS) that partly replaces a call center. I write test cases and checklists, log bugs in Jira, and check the UI, API, SQL, and logs when the result looks correct but is not. I wrote about 65% of the manual test cases; an AQA engineer later automated that suite — I do not write autotests. I check Jenkins results after a build. Hands-on with Postman, Jira, TestRail, SQL (Cloud Spanner), and Google Cloud Logging. English: written B2, spoken B1.</p>
     </div>
 
     <div class="card">
