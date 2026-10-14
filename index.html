@@ -13,12 +13,20 @@
     .contact a { color: #6c63ff; text-decoration: none; margin: 8px 10px; display: inline-flex; align-items: center; gap: 6px; }
     .contact a:hover { text-decoration: underline; }
     .telegram-link svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
-    .telegram-link .arrow { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }    section { padding: 40px 20px; max-width: 900px; margin: auto; }
+    section { padding: 40px 20px; max-width: 900px; margin: auto; }
     h2 { color: #1a1a1a; border-bottom: 2px solid #6c63ff; padding-bottom: 5px; }
     ul { list-style: none; padding: 0; }
     li { margin-bottom: 8px; }
     .card { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
     footer { background: #1a1a1a; color: #bbb; text-align: center; padding: 15px; font-size: 0.9em; }
+    .sample-note { color: #555; font-size: 0.95em; margin: 0 0 8px; }
+    .samples figure { margin: 18px 0 0; }
+    .samples img { width: 100%; height: auto; border: 1px solid #e6e6e6; border-radius: 6px; background: #fff; }
+    .samples figcaption { margin-top: 6px; color: #555; font-size: 0.9em; }
+    .beetle { position: fixed; width: 44px; height: 44px; display: none; z-index: 30; pointer-events: none; filter: drop-shadow(0 1px 1px rgba(0,0,0,.35)); }
+    .beetle svg { width: 100%; height: 100%; display: block; }
+    .beetle.green { color: #21c35e; }
+    .beetle.red { color: #e23d3d; }
   </style>
 </head>
 <body>
@@ -32,7 +40,6 @@
       <a href="https://t.me/v_nica" class="telegram-link" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.7 2.3c.4-.2.8.2.7.6l-3.2 18.1c-.1.5-.6.7-1 .5l-5.4-3.9-2.6 2.5c-.3.3-.8.1-.8-.3v-4.4L20 5.4 6.5 13.8 2.4 12.5c-.6-.2-.6-1 .1-1.3L21.7 2.3z"/></svg>
         Telegram
-        <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h12M13 6l6 6-6 6"/></svg>
       </a>
     </div>
   </header>
@@ -61,7 +68,7 @@
     <li>Jira, TestRail, Zephyr, Redmine, Bugzilla, Mantis, Trello</li>
     <li>Chrome DevTools, Postman API, Insomnia</li>
     <li>Jenkins, Git, GitHub</li>
-    <li>SQL, Google Google Spanner</li>
+    <li>SQL, Google Spanner</li>
     <li>Google Sheets, Google Workspace, Microsoft Office</li>
     <li>Notepad++, Pycharm</li>
   </ul>
@@ -106,7 +113,6 @@
         <li>Managed full bug lifecycle using Jira from detection through veriﬁcation and closure</li>
         <li>Performed REST API testing using Postman: validated request/response structures, status codes, headers, and error handling</li>
         <li>Executed integration testing across UI and API layers of web applications</li>
-        <li></li>
         <li>Investigated issues via Google Cloud Logging (Log Explorer), Monitoring alert, & SQL</li>
         <li>Tested LLM‑based healthcare communication system integrating telephony and SMS APIs to notify patients about appointments and prescriptions</li>
       </ul>
@@ -128,6 +134,27 @@
       <h2>Languages</h2>
       <p>Ukrainian — Native | English — Written B2, Spoken B1</p>
     </div>
+
+    <div class="card samples">
+      <h2>QA samples (sanitized)</h2>
+      <p class="sample-note">Fictional data for portfolio. Not client production. No real patients.</p>
+      <figure>
+        <img src="samples/roles_permissions_matrix.jpg" alt="Sanitized roles and permissions matrix">
+        <figcaption>Roles &amp; permissions matrix</figcaption>
+      </figure>
+      <figure>
+        <img src="samples/LLM_voice_agent_QA.jpg" alt="Sanitized LLM voice agent QA scenarios">
+        <figcaption>LLM / voice agent scenarios</figcaption>
+      </figure>
+      <figure>
+        <img src="samples/bug_report_web_saas.jpg" alt="Sanitized web SaaS bug report sample">
+        <figcaption>Bug reports</figcaption>
+      </figure>
+      <figure>
+        <img src="samples/REST_API_Postman_checklist.png" alt="Sanitized REST API Postman checklist">
+        <figcaption>REST API checklist (Postman)</figcaption>
+      </figure>
+    </div>
   </section>
 
   <footer>
@@ -138,36 +165,39 @@
   <img id="tomatoPlant" src="plant.png" alt="Tomato Plant" width="120" style="cursor:pointer;">
 </div>
 
-<!-- Bug -->
-<div id="bug" style="position:fixed; width:24px; height:24px; background:limegreen; border-radius:50%; display:none;">
-  <!-- Legs -->
-  <div style="position:absolute; top:2px; left:-6px; width:6px; height:2px; background:black;"></div>
-  <div style="position:absolute; top:20px; left:-6px; width:6px; height:2px; background:black;"></div>
-  <div style="position:absolute; top:2px; right:-6px; width:6px; height:2px; background:black;"></div>
-  <div style="position:absolute; top:20px; right:-6px; width:6px; height:2px; background:black;"></div>
-  <!-- Antennae -->
-  <div style="position:absolute; top:-6px; left:4px; width:2px; height:6px; background:black;"></div>
-  <div style="position:absolute; top:-6px; right:4px; width:2px; height:6px; background:black;"></div>
+<div id="bug" class="beetle" aria-hidden="true">
+  <svg viewBox="0 0 64 64">
+    <path d="M23 16c-1.2-8 3.2-13 6.2-13 1.3 0 2.3 1.8 2.3 5.2 0 4.2-2.4 9.3-4.4 11.6h-1.6c-.8-1.4-2-2.6-2.5-3.8z"/>
+    <path d="M41 16c1.2-8-3.2-13-6.2-13-1.3 0-2.3 1.8-2.3 5.2 0 4.2 2.4 9.3 4.4 11.6h1.6c.8-1.4 2-2.6 2.5-3.8z"/>
+    <ellipse cx="32" cy="20" rx="9.5" ry="7.5"/>
+    <path d="M30.6 27c-12 1.8-16.8 10-16.2 20.2C15 56 22 61 30.6 61V27z"/>
+    <path d="M33.4 27c12 1.8 16.8 10 16.2 20.2C49 56 42 61 33.4 61V27z"/>
+    <path d="M20 34L9 27M18 42L6 42M20 50L9 56M44 34L55 27M46 42L58 42M44 50L55 56" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+  </svg>
 </div>
 
 <script>
   const plant = document.getElementById('tomatoPlant');
   const bug = document.getElementById('bug');
+  let move;
 
   plant.addEventListener('click', () => {
+    if (move) clearInterval(move);
+
+    bug.classList.remove('red', 'green');
+    bug.classList.add(Math.random() < 0.5 ? 'red' : 'green');
     bug.style.display = 'block';
-    bug.style.right = '100px';
-    bug.style.bottom = '100px';
 
-    const directions = ['left','right','up','down'];
-    const dir = directions[Math.floor(Math.random()*directions.length)];
+    const directions = ['left', 'right', 'up', 'down'];
+    const dir = directions[Math.floor(Math.random() * directions.length)];
+    bug.style.transform = dir === 'left' ? 'scaleX(-1)' : dir === 'up' ? 'rotate(-90deg)' : dir === 'down' ? 'rotate(90deg)' : 'none';
 
-    let posX = window.innerWidth - 100;
+    let posX = window.innerWidth - 120;
     let posY = 100;
     let wave = 0;
 
-    const move = setInterval(() => {
-      wave += 0.3; // хвиля для коливання
+    move = setInterval(() => {
+      wave += 0.3;
 
       if (dir === 'right') {
         posX += 5;
@@ -189,7 +219,7 @@
       bug.style.left = posX + 'px';
       bug.style.bottom = posY + 'px';
 
-      if (posX < -50 || posX > window.innerWidth+50 || posY < -50 || posY > window.innerHeight+50) {
+      if (posX < -60 || posX > window.innerWidth + 60 || posY < -60 || posY > window.innerHeight + 60) {
         clearInterval(move);
         bug.style.display = 'none';
       }
